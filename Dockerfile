@@ -12,7 +12,7 @@ LABEL io.projectatomic.nulecule.atomicappversion="0.1.11" \
 RUN echo -e "[epel]\nname=epel\nenabled=1\nbaseurl=https://dl.fedoraproject.org/pub/epel/7/x86_64/\ngpgcheck=0" > /etc/yum.repos.d/epel.repo
 RUN echo -e "[epel-testing]\nname=epel-testing\nenabled=1\nbaseurl=https://dl.fedoraproject.org/pub/epel/testing/7/x86_64/\ngpgcheck=0" > /etc/yum.repos.d/epel-testing.repo
 
-RUN yum install -y atomicapp python-lockfile python-setuptools --setopt=tsflags=nodocs && \
+RUN yum install -y atomicapp python-lockfile python-setuptools docker --setopt=tsflags=nodocs && \
     yum clean all
 
 # the entrypoint
